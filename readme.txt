@@ -1,0 +1,5 @@
+This code sends an email containing Reddit posts that match a certain set of criteria. First, it authenticates with Reddit using the credentials provided in the secrets file. Then, it designates the subreddit to explore, and uses the rising() function to explore the rising posts of that subreddit. For each post found, it checks if it matches the criteria outlined in KEYWORDS_GROUP. If it does, then it stores the post information in a dictionary, along with a keyword count and weighted score, and appends that to a list called matching_posts_info. Once all posts have been examined, the list is sorted in ascending order by keyword count, then descending order by weighted score.
+
+If there is at least one post in the list, then the code sends an email with the post information to the address provided in the secrets file. It creates the email using the MIMEMultipart and MIMEText functions, and sends the email using the SMTP library.
+
+Once the email has been sent, the code terminates.
